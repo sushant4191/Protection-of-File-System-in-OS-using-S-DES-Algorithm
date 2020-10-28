@@ -7,11 +7,11 @@ Objective:<br>
 ➢ Comparing the time and space aspects of decrypted file and encrypted file.<br>
 
 ABOUT DES<br>
-The Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST).<br>
-DES is an implementation of a Feistel Cipher. <br>
-It uses 16 round Feistel structure. <br>
-The block size is 64-bit. <br>
-Though, key length is 64-bit, DES has an effective key length of 56 bits, since 8 of the 64 bits of the key are not used by the encryption algorithm (function as check bits only).<br>
+• The Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST).<br>
+• DES is an implementation of a Feistel Cipher.<br>
+• It uses 16 round Feistel structure.<br>
+• The block size is 64-bit.<br>
+• Though, key length is 64-bit, DES has an effective key length of 56 bits, since 8 of the 64 bits of the key are not used by the encryption algorithm (function as check bits only).<br>
 
 SCOPE:<br>
 • First of all user fulfill the agreement form of this program then user insert a text massage or include text massage file.<br>
