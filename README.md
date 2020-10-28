@@ -1,4 +1,4 @@
-# Protection-of-File-System-in-OS-using-DES-Algorithm
+# Protection-of-File-System-in-OS-using-S-DES-Algorithm
 
 Objective:<br>
 ➢ Understanding the need of data security and integrity to be included during design of distributed operating system.<br>
