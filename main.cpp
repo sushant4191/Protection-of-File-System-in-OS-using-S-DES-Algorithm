@@ -14,155 +14,156 @@ loop--;
 }
 void p10_arrange(int bin[],int p10[])
 {
-int i;
-p10[0]=bin[2];
-p10[1]=bin[4];
-p10[2]=bin[1];
-p10[3]=bin[6];
-p10[4]=bin[3];
-p10[5]=bin[9];
-p10[6]=bin[0];
-p10[7]=bin[8];
-p10[8]=bin[7];
-p10[9]=bin[5];
-if(f98==0)
-{
-cout<<"After Permutation ";
-for(i=0;i<=9;i++)
-{
-cout<<bin[i];
-}
-cout<<endl<<endl;
-f98=1;
-}
+    int i;
+    p10[0]=bin[2];
+    p10[1]=bin[4];
+    p10[2]=bin[1];
+    p10[3]=bin[6];
+    p10[4]=bin[3];
+    p10[5]=bin[9];
+    p10[6]=bin[0];
+    p10[7]=bin[8];
+    p10[8]=bin[7];
+    p10[9]=bin[5];
+    if(f98==0)
+    {
+    cout<<"After Permutation ";
+    for(i=0;i<=9;i++)
+    {
+        cout<<bin[i];
+    }
+    cout<<endl<<endl;
+    f98=1;
+    }
 }
 void LS1(int p10[],int left_LS1[],int right_LS1[])
 {
-int i;
-left_LS1[0]=p10[1];
-left_LS1[1]=p10[2];
-left_LS1[2]=p10[3];
-left_LS1[3]=p10[4];
-left_LS1[4]=p10[0];
-right_LS1[0]=p10[6];
-right_LS1[1]=p10[7];
-right_LS1[2]=p10[8];
-right_LS1[3]=p10[9];
-right_LS1[4]=p10[5];
-if(f97==0)
-{
-cout<<"After Left Part Left Shift ";
-for(i=0;i<=4;i++)
-{
-cout<<left_LS1[i];
-}
-cout<<endl<<endl;
-cout<<"After Right Part Left Shift ";
-for(i=0;i<=4;i++)
-{
-cout<<right_LS1[i];
-}
-cout<<endl<<endl;
-f97=1;
-}
+        int i;
+        left_LS1[0]=p10[1];
+        left_LS1[1]=p10[2];
+        left_LS1[2]=p10[3];
+        left_LS1[3]=p10[4];
+        left_LS1[4]=p10[0];
+        right_LS1[0]=p10[6];
+        right_LS1[1]=p10[7];
+        right_LS1[2]=p10[8];
+        right_LS1[3]=p10[9];
+        right_LS1[4]=p10[5];
+        if(f97==0)
+        {
+        cout<<"After Left Part Left Shift ";
+        for(i=0;i<=4;i++)
+        {
+            cout<<left_LS1[i];
+        }
+        cout<<endl<<endl;
+        cout<<"After Right Part Left Shift ";
+        for(i=0;i<=4;i++)
+        {
+            cout<<right_LS1[i];
+        }
+        cout<<endl<<endl;
+        f97=1;
+        }
 }
 void p8(int left_LS1[],int right_LS1[],int subkey1[])
 {
-subkey1[0]=right_LS1[0];
-subkey1[1]=left_LS1[2];
-subkey1[2]=right_LS1[1];
-subkey1[3]=left_LS1[3];
-subkey1[4]=right_LS1[2];
-subkey1[5]=left_LS1[4];
-subkey1[6]=right_LS1[4];
-subkey1[7]=right_LS1[3];
+    subkey1[0]=right_LS1[0];
+    subkey1[1]=left_LS1[2];
+    subkey1[2]=right_LS1[1];
+    subkey1[3]=left_LS1[3];
+    subkey1[4]=right_LS1[2];
+    subkey1[5]=left_LS1[4];
+    subkey1[6]=right_LS1[4];
+    subkey1[7]=right_LS1[3];
 }
 void LS2(int left_LS1[],int right_LS1[],int left_LS2[],int right_LS2[])
 {
-left_LS2[0]=left_LS1[2];
-left_LS2[1]=left_LS1[3];
-left_LS2[2]=left_LS1[4];
-left_LS2[3]=left_LS1[0];
-left_LS2[4]=left_LS1[1];
-right_LS2[0]=right_LS1[2];
-right_LS2[1]=right_LS1[3];
-right_LS2[2]=right_LS1[4];
-right_LS2[3]=right_LS1[0];
-right_LS2[4]=right_LS1[1];
+    left_LS2[0]=left_LS1[2];
+    left_LS2[1]=left_LS1[3];
+    left_LS2[2]=left_LS1[4];
+    left_LS2[3]=left_LS1[0];
+    left_LS2[4]=left_LS1[1];
+    right_LS2[0]=right_LS1[2];
+    right_LS2[1]=right_LS1[3];
+    right_LS2[2]=right_LS1[4];
+    right_LS2[3]=right_LS1[0];
+    right_LS2[4]=right_LS1[1];
 }
 void key_generator(int num,int subkey1[],int subkey2[])
 {
-int i,bin[10];
-binary(num,bin);
-if(f99==0)
-{
-for(i=0;i<=9;i++)
-{
-cout<<bin[i]<<" ";
-}
-f99=1;
-cout<<endl<<endl;
-}
-int p10[10];
-p10_arrange(bin,p10);
-int left_LS1[5],right_LS1[5];
-LS1(p10,left_LS1,right_LS1);
-p8(left_LS1,right_LS1,subkey1);
-int left_LS2[5],right_LS2[5];
-LS2(left_LS1,right_LS1,left_LS2,right_LS2);
-p8(left_LS2,right_LS2,subkey2);
-void IP(int bin[],int ip_arrange[])
-{
-ip_arrange[0]=bin[3];
-ip_arrange[1]=bin[7];
-ip_arrange[2]=bin[4];
-ip_arrange[3]=bin[2];
-ip_arrange[4]=bin[5];
-ip_arrange[5]=bin[9];
-ip_arrange[6]=bin[6];
-ip_arrange[7]=bin[8];
-}
+    int i,bin[10];
+    binary(num,bin);
+    if(f99==0)
+    {
+    for(i=0;i<=9;i++)
+    {
+        cout<<bin[i]<<" ";
+    }
+    f99=1;
+    cout<<endl<<endl;
+    }
+    int p10[10];
+    p10_arrange(bin,p10);
+    int left_LS1[5],right_LS1[5];
+    LS1(p10,left_LS1,right_LS1);
+    p8(left_LS1,right_LS1,subkey1);
+    int left_LS2[5],right_LS2[5];
+    LS2(left_LS1,right_LS1,left_LS2,right_LS2);
+    p8(left_LS2,right_LS2,subkey2);
+
+    void IP(int bin[],int ip_arrange[])
+    {
+        ip_arrange[0]=bin[3];
+        ip_arrange[1]=bin[7];
+        ip_arrange[2]=bin[4];
+        ip_arrange[3]=bin[2];
+        ip_arrange[4]=bin[5];
+        ip_arrange[5]=bin[9];
+        ip_arrange[6]=bin[6];
+        ip_arrange[7]=bin[8];
+    }
 }
 void seperate(int ip_arrange[],int left_ip[],int right_ip[])
 {
-left_ip[0]=ip_arrange[0];
-left_ip[1]=ip_arrange[1];
-left_ip[2]=ip_arrange[2];
-left_ip[3]=ip_arrange[3];
-right_ip[0]=ip_arrange[4];
-right_ip[1]=ip_arrange[5];
-right_ip[2]=ip_arrange[6];
-right_ip[3]=ip_arrange[7];
+    left_ip[0]=ip_arrange[0];
+    left_ip[1]=ip_arrange[1];
+    left_ip[2]=ip_arrange[2];
+    left_ip[3]=ip_arrange[3];
+    right_ip[0]=ip_arrange[4];
+    right_ip[1]=ip_arrange[5];
+    right_ip[2]=ip_arrange[6];
+    right_ip[3]=ip_arrange[7];
 }
 void FP_arrange(int right_ip[],int fp[])
 {
-fp[0]=right_ip[3];
-fp[1]=right_ip[0];
-fp[2]=right_ip[1];
-fp[3]=right_ip[2];
-fp[4]=right_ip[1];
-fp[5]=right_ip[2];
-fp[6]=right_ip[3];
-fp[7]=right_ip[0];
+    fp[0]=right_ip[3];
+    fp[1]=right_ip[0];
+    fp[2]=right_ip[1];
+    fp[3]=right_ip[2];
+    fp[4]=right_ip[1];
+    fp[5]=right_ip[2];
+    fp[6]=right_ip[3];
+    fp[7]=right_ip[0];
 }
 void zor(int fp[],int subkey1[],int left_zor[4],int right_zor[4])
 {
 if(fp[3]==subkey1[0])
-left_zor[0]=0;
+    left_zor[0]=0;
 else if (fp[3]!=subkey1[0])
-left_zor[0]=1;
+    left_zor[0]=1;
 if(fp[0]==subkey1[1])
-left_zor[1]=0;
+    left_zor[1]=0;
 else if (fp[0]!=subkey1[1])
-left_zor[1]=1;
+    left_zor[1]=1;
 if(fp[1]==subkey1[2])
-left_zor[2]=0;
+    left_zor[2]=0;
 else if (fp[1]!=subkey1[2])
-left_zor[2]=1;
+    left_zor[2]=1;
 if(fp[2]==subkey1[3])
-left_zor[3]=0;
+    left_zor[3]=0;
 else if (fp[2]!=subkey1[3])
-left_zor[3]=1;
+    left_zor[3]=1;
 ///// right_zor /////
 if(fp[1]==subkey1[4])
 right_zor[0]=0;
