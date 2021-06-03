@@ -112,7 +112,6 @@ void key_generator(int num,int subkey1[],int subkey2[])
     LS2(left_LS1,right_LS1,left_LS2,right_LS2);
     p8(left_LS2,right_LS2,subkey2);
 }
-
     void IP_arrange(int bin[],int ip_arrange[])
 	{
         ip_arrange[0]=bin[3];
@@ -264,8 +263,7 @@ int E(int leter_num,int key_num )
     int ip_inv[8];
     Ip_invers(sw_zor,sw_right_ip,ip_inv);
     int sum;
-    sum=(ip_inv[0]*128)+(ip_inv[1]*64)+(ip_inv[2]*32)+(ip_inv[3]*16)+(ip_inv[4]*8)+(ip_inv[5]*4)+(ip_inv[6]
-    *2)+(ip_inv[7]*1);
+    sum=(ip_inv[0]*128)+(ip_inv[1]*64)+(ip_inv[2]*32)+(ip_inv[3]*16)+(ip_inv[4]*8)+(ip_inv[5]*4)+(ip_inv[6]*2)+(ip_inv[7]*1);
     return(sum);
 }
 int D(int leter_num,int key_num )
@@ -301,8 +299,7 @@ int D(int leter_num,int key_num )
     int ip_inv[8];
     Ip_invers(sw_zor,sw_right_ip,ip_inv);
     int sum;
-    sum=(ip_inv[0]*128)+(ip_inv[1]*64)+(ip_inv[2]*32)+(ip_inv[3]*16)+(ip_inv[4]*8)+(ip_inv[5]*4)+(ip_inv[6]
-    *2)+(ip_inv[7]*1);
+    sum=(ip_inv[0]*128)+(ip_inv[1]*64)+(ip_inv[2]*32)+(ip_inv[3]*16)+(ip_inv[4]*8)+(ip_inv[5]*4)+(ip_inv[6]*2)+(ip_inv[7]*1);
     return(sum);
 }
 void get_file_data(char message_file[],char key_file[],char user_message[],char user_key[])
@@ -441,12 +438,22 @@ void file_choice()
 {
     char cchoice;
     int ichoice;
+    cout<<"\n\t****FILE SYSTEM PROTECTION USING ENCRYPTION METHOD****\n\n";
+    cout<<"\n(0) Press '0' to Exit.\n\n";
     cout<<"(1) Include pre-built files for taking message and key.\n\n";
     cout<<"(2) Don't include pre-built files, I will type my message and key.\n\n";
     cout<<"\n\nEnter your choice:";
     cin>>cchoice;
+    while (cchoice!='0')
+	{
     ichoice=cchoice;
     message_and_key(ichoice);
+    cout<<"\n\n\n(0) Press '0' to Exit.\n\n";
+    cout<<"(1) Include pre-built files for taking message and key.\n\n";
+    cout<<"(2) Don't include pre-built files, I will type my message and key.\n\n";
+    cout<<"\n\nEnter your choice:";
+    cin>>cchoice;
+	}
 }
 int main()
 {
