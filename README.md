@@ -17,10 +17,5 @@ SCOPE:<br>
 • First of all user fulfill the agreement form of this program then user insert a text massage or include text massage file.<br>
 • Encryption key as an input as a result, this program will encrypt and decrypt this text massage and save it in a file.<br>
 
-Project Report: https://bit.ly/ProjectReportsOfTanishqWadhwani<br>
 
-<i>If this side project of mine helped you in your journey, it would mean a lot to me if you could tap on the star button above.
-It would help me boost my personal brand.
-Thanks! :) </i><br>
-
-Wishing you all the very best!
+Few Modification has been made from the original project, hope you all like it! 
